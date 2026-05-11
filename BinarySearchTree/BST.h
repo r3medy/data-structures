@@ -23,6 +23,9 @@ public:
     int countNodes();
     int countNodesAUX(Node *n);
 
+    int findMax();
+    int findMin();
+
     int countLeafNodes();
     int countLeafNodesAUX(Node *n);
 
@@ -35,6 +38,12 @@ public:
     bool isAVL();
     bool isFull();
     bool isComplete();
+
+    int countNodesWith1Child();
+    int countNodesWith1ChildAUX(Node *n);
+    
+    int countNodesWith2Children();
+    int countNodesWith2ChildrenAUX(Node *n);
 
     void deleteNodesWith1Child();
     void deleteNodesWith1ChildAUX(Node *&n); // changed to Node *&
@@ -65,7 +74,9 @@ public:
 
     void clearTree();
     void destroyTree();
-    
+
     void display();
     void displayAUX(Node *n); // added Node *n parameter
+
+    void printLevelByLevel();
 };
