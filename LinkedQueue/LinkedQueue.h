@@ -13,10 +13,13 @@ private:
 
 public:
     Queue();
+    Queue(Queue &);
     ~Queue();
     bool isEmpty();
     void enqueue(int val);
     int dequeue();
+    int peekFront();
+    int peekRear();
     void traverse(void (*func)(int));
     void display();
     void swapFrontRear();

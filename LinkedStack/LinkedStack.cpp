@@ -7,6 +7,19 @@ LinkedStack::LinkedStack() {
     head = nullptr;
 }
 
+LinkedStack::LinkedStack(const LinkedStack &src) {
+    head = nullptr;
+    Node *curr = src.head;
+    LinkedStack temp;
+    while(curr != nullptr) {
+        temp.push(curr->value);
+        curr = curr->next;
+    }
+    while(!temp.isEmpty()) {
+        push(temp.pop());
+    }
+}
+
 LinkedStack::~LinkedStack() {
     Node *curr = head;
     while(curr != nullptr) {

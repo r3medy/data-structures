@@ -14,6 +14,7 @@ private:
 
 public:
     LinkedStack();
+    LinkedStack(const LinkedStack &src);
     ~LinkedStack();
 
     void push(int val);
@@ -23,3 +24,5 @@ public:
     void traverse(void (*func)(int));
     void display();
 };
+
+// LIFO

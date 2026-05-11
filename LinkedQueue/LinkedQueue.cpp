@@ -5,6 +5,16 @@ using namespace std;
 Queue::Queue() {
     head = tail = nullptr;
 }
+
+Queue::Queue(Queue &src) {
+    head = tail = nullptr;
+    Node *curr = src.head;
+    while(curr != nullptr) {
+        enqueue(curr->value);
+        curr = curr->next;
+    }
+}
+
 Queue::~Queue() {
     Node *curr = head;
     while(curr != nullptr) {
@@ -38,6 +48,16 @@ int Queue::dequeue() {
     if(head == nullptr) tail = nullptr;
     delete temp;
     return value;
+}
+
+int Queue::peekFront() {
+    if(isEmpty()) return -1;
+    return head->value;
+}
+
+int Queue::peekRear() {
+    if(isEmpty()) return -1;
+    return tail->value;
 }
 
 void Queue::traverse(void (*func)(int)) {
